@@ -1,8 +1,7 @@
 package com.als.webIde.service;
 
-import com.als.webIde.DTO.etc.TokenDto;
 import io.jsonwebtoken.*;
-import io.jsonwebtoken.io.Decoders;
+
 import io.jsonwebtoken.security.Keys;
 
 import jakarta.annotation.PostConstruct;
@@ -14,7 +13,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Component;
 
-import javax.crypto.SecretKey;
 import java.security.Key;
 import java.util.Base64;
 import java.util.Date;
@@ -88,7 +86,6 @@ public class TokenProvider {
     }
 
     public boolean validateToken(String authToken) throws ExpiredJwtException {
-
         Jwts.parser().setSigningKey(secretKey).build().parseClaimsJws(authToken);
         return true;
 
