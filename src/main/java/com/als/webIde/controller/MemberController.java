@@ -134,7 +134,7 @@ public class MemberController {
         MemberSetting memberSetting = memberSettingRepository.findById(MemberSettingId.builder().userPk(details.getId()).build()).orElseThrow(() -> new CustomException(ERROR_USER));
 
         MemberSetting member = MemberSetting.builder().MemberId(new MemberSettingId(details.getId()))
-                .nickname(nickName.getUserNickName()).theme(details.getUserTheme()).member(memberSetting.getMember()).build();
+                .nickname(nickName.getUserNickName()).theme(details.getUserThema()).member(memberSetting.getMember()).build();
 
         memberSettingRepository.save(member);
 
