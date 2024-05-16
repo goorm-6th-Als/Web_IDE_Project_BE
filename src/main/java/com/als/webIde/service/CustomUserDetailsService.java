@@ -37,7 +37,7 @@ public class CustomUserDetailsService implements UserDetailsService {
                 .userId(member.getUserId())
                 .userPassword(member.getPassword())
                 .userNickName(memberSetting.getNickname())
-                .userTheme(memberSetting.getTheme())
+                .userThema(memberSetting.getTheme())
                 .build();
 
         return new CustomUserDetails(user);
