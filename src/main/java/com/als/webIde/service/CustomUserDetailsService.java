@@ -1,6 +1,5 @@
 package com.als.webIde.service;
 
-import com.als.webIde.DTO.etc.CustomErrorCode;
 import com.als.webIde.DTO.etc.CustomException;
 import com.als.webIde.DTO.etc.CustomUserDetails;
 import com.als.webIde.DTO.etc.UserInfoDetails;
@@ -38,7 +37,7 @@ public class CustomUserDetailsService implements UserDetailsService {
                 .userId(member.getUserId())
                 .userPassword(member.getPassword())
                 .userNickName(memberSetting.getNickname())
-                .userThema(memberSetting.getThema())
+                .userTheme(memberSetting.getTheme())
                 .build();
 
         return new CustomUserDetails(user);

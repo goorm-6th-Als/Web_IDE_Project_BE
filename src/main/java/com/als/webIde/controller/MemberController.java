@@ -20,15 +20,12 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpRequest;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 import static com.als.webIde.DTO.etc.CustomErrorCode.*;
 
@@ -137,7 +134,7 @@ public class MemberController {
         MemberSetting memberSetting = memberSettingRepository.findById(MemberSettingId.builder().userPk(details.getId()).build()).orElseThrow(() -> new CustomException(ERROR_USER));
 
         MemberSetting member = MemberSetting.builder().MemberId(new MemberSettingId(details.getId()))
-                .nickname(nickName.getUserNickName()).thema(details.getUserThema()).member(memberSetting.getMember()).build();
+                .nickname(nickName.getUserNickName()).theme(details.getUserTheme()).member(memberSetting.getMember()).build();
 
         memberSettingRepository.save(member);
 
