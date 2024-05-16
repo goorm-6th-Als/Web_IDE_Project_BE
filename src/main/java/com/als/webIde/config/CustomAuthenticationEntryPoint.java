@@ -1,6 +1,7 @@
 package com.als.webIde.config;
 
 import com.als.webIde.DTO.etc.ErrorCode;
+import com.als.webIde.DTO.response.Message;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -41,8 +42,8 @@ public class CustomAuthenticationEntryPoint implements AuthenticationEntryPoint 
     //한글 출력을 위해 getWriter() 사용
     private void setResponse(HttpServletResponse response, ErrorCode exceptionCode) throws IOException {
         response.setContentType("application/json;charset=UTF-8");
-        response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+        response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 
-        response.getWriter().print(new ObjectMapper().writeValueAsString(exceptionCode.getMessage()));
+        response.getWriter().print(new ObjectMapper().writeValueAsString(Message.builder().message(exceptionCode.getMessage() ).build()));
     }
 }
