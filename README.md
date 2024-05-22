@@ -93,7 +93,43 @@
 
 
 
-## <img src="https://github.com/Kangjunesu/Web_IDE_Project_BE/assets/108870712/06a7b001-9eec-4d71-9dd4-55a3223b08b7" width="30" height="30"/> 적용 기술
+## <img src="https://github.com/Kangjunesu/Web_IDE_Project_BE/assets/108870712/06a7b001-9eec-4d71-9dd4-55a3223b08b7" width="30" height="30"/> 시연
+<img src="https://github.com/Kangjunesu/Web_IDE_Project_BE/assets/108870712/22795226-81ea-4ac8-81c3-c0295ccc73de" width="25" height="25"/> 회원가입 / 로그인
+
+<img src="https://github.com/Kangjunesu/Web_IDE_Project_BE/assets/108870712/8f64b041-e46a-4ce1-813e-729858bd95f1" width="600" />
+<img src="https://github.com/Kangjunesu/Web_IDE_Project_BE/assets/108870712/eb25a35b-0705-4e79-a546-680003e5e24d" width="600" />
+
+
+### <img src="https://github.com/Kangjunesu/Web_IDE_Project_BE/assets/108870712/1545fb83-2cb5-45c3-ad3a-d83f9b2ba3d1" width="25" height="25"/> 마이페이지
+
+**닉네임 변경**
+
+<img src="https://github.com/Kangjunesu/Web_IDE_Project_BE/assets/108870712/6f23172e-1a16-4b1b-8cda-6a330bca9d54" width="600" />
+
+**비밀번호 변경**
+
+<img src="https://github.com/Kangjunesu/Web_IDE_Project_BE/assets/108870712/f394efdb-e7ba-4a16-880e-b5a2b3c6b841" width="600" />
+
+
+### <img src="https://github.com/Kangjunesu/Web_IDE_Project_BE/assets/108870712/fed40a31-0b07-4d0a-bd9b-8b8231e51fad" width="20" height="20"/> IDE
+
+**파일 생성**
+
+<img src="https://github.com/Kangjunesu/Web_IDE_Project_BE/assets/108870712/f84f4a71-c4b2-42fe-b9c7-efd0c53cd7aa" width="600" />
+
+**코드 컴파일, 실행**
+
+<img src="https://github.com/Kangjunesu/Web_IDE_Project_BE/assets/108870712/0e87fdb3-1ebb-4427-b371-de0d73547eb6" width="600" />
+
+**파일 저장**
+
+<img src="https://github.com/Kangjunesu/Web_IDE_Project_BE/assets/108870712/c1bdb3a2-ea1b-4c8b-8f65-ca13df765158" width="600" />
+
+
+**파일 삭제**
+
+<img src="https://github.com/Kangjunesu/Web_IDE_Project_BE/assets/108870712/2be12138-5703-4250-aa63-7f8500834ca3" width="600" />
+
 
 
 ## <img src="https://github.com/Kangjunesu/Web_IDE_Project_BE/assets/108870712/5e89f98a-3681-4fc3-98e4-541d9b9eb410" width="30" height="30"/> 트러블 슈팅
