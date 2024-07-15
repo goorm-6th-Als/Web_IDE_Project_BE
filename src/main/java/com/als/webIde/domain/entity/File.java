@@ -1,61 +1,56 @@
 package com.als.webIde.domain.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-@Entity
+import java.io.Serializable;
+import java.util.Objects;
+
 @Getter
-@Setter
-@NoArgsConstructor
+@Entity
 @Table(name = "file")
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class File {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "file_pk")
-    private Long filePk;
+    @EmbeddedId
+    private FileId id;
 
-    @Column(name = "user_pk", nullable = false)
-    private Long userPk;
+    @MapsId("directoryPk")
+    @ManyToOne
+    @JoinColumn(name = "directory_pk")
+    private Directory directory;
 
-    @Column(name = "suffix_file", nullable = false)
-    private String suffixFile;
-
-    @Column(name = "content_cd", columnDefinition = "TEXT")
+    @Column(name = "content_cd")
     private String contentCd;
 
     @Column(name = "file_title", nullable = false)
     private String fileTitle;
 
-    @Column(name = "path", nullable = false)
-    private String path;
+    @Column(name = "suffix_file", nullable = false)
+    private String suffixFile;
+}
 
-    @ManyToOne
-    @JoinColumn(name = "user_pk", insertable = false, updatable = false)
-    private Member member;
+@Embeddable
+class FileId implements Serializable {
+    @Column(name = "file_pk")
+    private Long filePk;
 
-    //    @ManyToOne
-//    @JoinColumn(name = "container_pk", insertable = false, updatable = false)
-//    private Container container;
+    @Column(name = "directory_pk")
+    private Long directoryPk;
 
-    public void codeSave(String fileTitle, String contentCd){
-        this.fileTitle = fileTitle;
-        this.contentCd = contentCd;
+    // equals() and hashCode() methods
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        FileId that = (FileId) o;
+        return Objects.equals(filePk, that.filePk) &&
+                Objects.equals(directoryPk, that.directoryPk);
     }
 
-    @Builder
-    public File(Long userPk, String fileTitle, String suffixFile,String contentCd, String path) {
-        this.userPk = userPk;
-        this.fileTitle = fileTitle;
-        this.contentCd = contentCd;
-        this.suffixFile = suffixFile;
-        this.path = path;
+    @Override
+    public int hashCode() {
+        return Objects.hash(filePk, directoryPk);
     }
-
-
 }
