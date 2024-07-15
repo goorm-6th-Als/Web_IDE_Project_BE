@@ -1,50 +1,24 @@
 package com.als.webIde.domain.entity;
-
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 
-import java.io.Serializable;
-import java.util.Objects;
-
-@Getter
 @Entity
+@Setter
+@Getter
 @Table(name = "container")
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
 public class Container {
-    @EmbeddedId
-    private ContainerId id;
-
-    @MapsId("userPk")
-    @ManyToOne
-    @JoinColumn(name = "user_pk")
-    private Member member;
-
-    @Column(name = "title")
-    private String title;
-}
-
-@Embeddable
-class ContainerId implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "container_pk")
-    private Long containerPk;
+    private Long containerPk;//컨테이너 아이디
 
-    @Column(name = "user_pk")
-    private Long userPk;
+    @Column(name = "docker_id")
+    private String dockerId; // Docker 컨테이너 ID
 
-    // equals() and hashCode() methods
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        ContainerId that = (ContainerId) o;
-        return Objects.equals(containerPk, that.containerPk) &&
-                Objects.equals(userPk, that.userPk);
-    }
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_pk")
+    private Member member;// 회원 번호
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(containerPk, userPk);
-    }
 }
